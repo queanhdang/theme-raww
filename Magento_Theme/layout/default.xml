@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="3columns"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- <referenceBlock name="wish-list-link" remove="true"/><referenceBlock name="authorization-link" remove="true"/><referenceBlock name="header" remove="true"/><referenceBlock name="register-link" remove="true" /><referenceBlock name="my-account-link" remove="true" /> -->
+        <referenceContainer name="header.panel.wrapper">
+            <container htmlTag="div" htmlClass="dqa-top-header">
+                <block class="Magento\Framework\View\Element\Template" name="dqa.top.header" template="Magento_Cms::custom/dqa-top-header.phtml" />
+                <container htmlTag="div" htmlClass="dqa-top-item">
+                    <block class="Magento\Framework\View\Element\Template" template="Magento_Cms::custom/dqa-top-header-right.phtml" />
+                    <block class="Magento\Customer\Block\Account\Link" name="my-account-top-link">
+                        <arguments>
+                            <argument name="label" xsi:type="string" translate="true">My Account</argument>
+                            <argument name="sortOrder" xsi:type="number">110</argument>
+                        </arguments>
+                    </block>
+                </container>
+            </container>
+        </referenceContainer>
+        <referenceContainer name="header-wrapper">
+            <container htmlTag="div" htmlClass="dqa-rhb-wrapper" name="dqa.rhb.wrapper">
+                <block class="Magento\Framework\View\Element\Template" name="dqa.rhb" template="Magento_Cms::custom/dqa-rhb.phtml" />
+            </container>
+        </referenceContainer>
+        <move element="minicart" destination="header-wrapper" after="dqa.rhb.wrapper"/>
+        <referenceContainer name="footer-container">
+
+            <block class="Magento\Framework\View\Element\Template" name="dqa.footer.middle" template="Magento_Cms::custom/dqa-footer-middle.phtml" before="footer"/>
+            <container htmlClass="footer-copy-right" htmlTag="div" name="footer.copy.right" after='-'>
+                <block class="Magento\Framework\View\Element\Template" template="Magento_Cms::custom/footer-copy-right.phtml" />
+            </container>
+        </referenceContainer>
+        <move element="form.subscribe" destination="dqa.newsletter"/>
+        <referenceBlock name="footer_links" remove="true" />
+        <referenceBlock name="report.bugs" remove="true" />
+        <referenceContainer name="footer">
+            <block class="Magento\Framework\View\Element\Template" name="custom.footer.link" template="Magento_Cms::custom/footer-bottom.phtml" before="copyright" />
+        </referenceContainer>
+        <move element="copyright" destination="footer.copy.right" before="-" />
+        <referenceContainer name="page.top">
+                <block class="Magento\Framework\View\Element\Template" name="dqa.usp.message" template="Magento_Cms::custom/dqa-usp-message.phtml"  before="breadcrumbs"/>
+        </referenceContainer>
+    </body>
+</page>

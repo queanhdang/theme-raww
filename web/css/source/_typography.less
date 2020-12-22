@@ -1,0 +1,30 @@
+@font-family-name__base__avenir-black: 'avenir black';
+@font-family-name__base__avenir-heavy: 'avenir heavy';
+@font-family-name__base__avenir-roman: 'avenir roman';
+& when(@media-common=true) {
+        .lib-font-face(
+                @family-name: @font-family-name__base__avenir-heavy,
+                @font-path: "@{baseDir}fonts/avenir/Avenir-Heavy",
+                @font-weight: 700,
+                @font-format: 'woff'
+        );
+        .lib-font-face(
+                @family-name: @font-family-name__base__avenir-black,
+                @font-path: "@{baseDir}fonts/avenir/Avenir-Black",
+                @font-weight: 900,
+                @font-format: 'woff'
+        );
+        .lib-font-face(
+                @family-name: @font-family-name__base__avenir-roman,
+                @font-path: "@{baseDir}fonts/avenir/Avenir-Roman",
+                @font-weight: 500,
+                @font-format: 'woff'
+        );
+        .lib-font-face(
+                @family-name: 'marketfield',
+                @font-path: "@{baseDir}fonts/marketfield/Markerfield W00 Regular",
+                @font-format: 'woff',
+                @font-weight: normal,
+                @font-style: normal
+        );
+}

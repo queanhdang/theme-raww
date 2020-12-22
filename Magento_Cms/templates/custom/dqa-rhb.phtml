@@ -1,0 +1,7 @@
+<?php for ($i = 1; $i <= 2; $i++) { ?>
+    <a href="" class="dqa-rhb-item">
+        <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('dqa-rhb-' . $i)->toHtml() ?>
+    </a>
+<?php
+}
+?>

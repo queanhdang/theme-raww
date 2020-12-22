@@ -1,0 +1,30 @@
+<div class="footer-bottom">
+    <?php for ($i = 1; $i <= 3; $i++) { ?>
+        <div class="footer links">
+            <div class="footer-link-title">
+                <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-link-title-' . $i)->toHtml() ?>
+            </div>
+            <div class="footer-link-content">
+                <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-link-content-' . $i)->toHtml() ?>
+            </div>
+        </div>
+    <?php } ?>
+    <div class="footer links">
+        <div class="custom-newsletter">
+            <div class="footer-link-title">
+                <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-top-title')->toHtml() ?>
+            </div>
+            <div class="newsletter-des">
+                <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-top-des')->toHtml() ?>
+            </div>
+            <?= $block->getLayout()->createBlock('Magento\Newsletter\Block\Subscribe')->setTemplate("Magento_Newsletter::subscribe.phtml")->toHtml(); ?>
+        </div>
+        <div class="custom-network">
+            <div class="footer-link-title">Social</div>
+            <div class="footer-link-content">
+                <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('link-network')->toHtml() ?>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,91 @@
+& when(@media-common=true) {
+    .best-seller {
+        background-image: url("../images/best-seller-background.png");
+        padding-top: 95px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .block-title {
+            text-align: center;
+             > strong {
+                .mixin-style-title(@font-size: 32px, @font-family: "avenir heavy", @color: @color-white, @letter-spacing: -1px, @line-height: 74px);
+            }
+        }
+        .slick-next {
+            top: -60px;
+            right: 22px;
+            &:before {
+                .mixin-style(@font-size: 35px);
+                .mixin-icon(@content: @icon-arrow-right-thin, @font-family: 'icons-blank-theme',@font-weight: 400);
+            }
+            &:hover {
+                outline: none;
+            }
+        }
+        .slick-prev {
+            top: -60px;
+            left: 22px;
+            &:before {
+                .mixin-style(@font-size: 35px);
+                .mixin-icon(@content: @icon-arrow-left-thin, @font-family: 'icons-blank-theme',@font-weight: 400);
+            }
+            &:hover {
+                outline: none;
+            }
+        }
+    }
+    .product-item-info {
+        background-color: white;
+    }
+    .product-item-details {
+        text-align: center;
+        padding-bottom: 30px;
+        .product-item-link,
+        .price-box {
+            .mixin-style(@font-size: 16px, @font-family: "avenir heavy", @color: @color-black);
+        }
+    }
+    .best-seller-list {
+        .mixin-container(@width: 1240px, @padding: 0 10px);
+    }
+    .block-title {
+        text-align: center;
+         > strong {
+            .mixin-style-title(@font-size: 32px, @font-family: "avenir heavy", @color: @color-white, @letter-spacing: -1px, @line-height: 74px);
+        }
+    }
+    .block.widget .products-grid {
+        .product-item {
+            a {
+                span {
+                    width: 100% !important;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .block.widget .products-grid {
+        .product-items {
+            margin: 0 -9px;
+        }
+        .product-item {
+            padding: 0 9px;
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .block.widget .products-grid {
+        .product-items {
+            margin: 0 -9px;
+        }
+        .product-item {
+            padding: 0 9px;
+        }
+    }
+}

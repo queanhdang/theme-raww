@@ -1,0 +1,17 @@
+@import "_styleguide.less";
+@import '../slick/slick-theme.less';
+@import '../slick/slick.less';
+
+
+& when (@media-common = true) { 
+    .minicart-wrapper .action.showcart:before {
+        .mixin-icon(@content: '\f290', @font-family: 'Line Awesome Free');
+        color: @color-black;
+    }
+
+    .minicart-wrapper .action.showcart.active:before {
+        .mixin-icon(@content: '\f290', @font-family: 'Line Awesome Free');
+        color: orange;
+    }
+}   
+

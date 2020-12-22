@@ -1,0 +1,12 @@
+<div class="footer-middle">
+    <?php for ($i = 1; $i <= 4; $i++) { ?>
+        <a href="" class="footer-middle-item">
+            <div class="footer-middle-icon">
+                <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-middle-icon-' . $i)->toHtml() ?>
+            </div>
+            <div class="footer-middle-text">
+                <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-middle-text-' . $i)->toHtml() ?>
+            </div>
+        </a>
+    <?php } ?>
+</div>

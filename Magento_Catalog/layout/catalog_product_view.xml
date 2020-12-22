@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <move element="page.main.title" destination="product.info.main" before="-" />
+        <move element="content.aside" destination="page.wrapper" before="footer-container" />
+        <referenceContainer name="product.info.stock.sku" remove="true"/>
+        <referenceContainer name="product.info.price">
+            <block name="price.special.offer" class="Magento\Framework\View\Element\Template" template="Magento_Catalog::product/view/special-offer.phtml" after="-"/>
+        </referenceContainer>
+        <referenceContainer name="product.info.social" remove="true" />
+        <referenceContainer name='product.info.main'>
+            <block name="product.naturally" class="Magento\Framework\View\Element\Template" template="Magento_Catalog::product/view/product-naturally.phtml" after="-"/>
+        </referenceContainer>
+        <referenceContainer name="page.wrapper">
+            <block name="product.ingredient.info" class="Magento\Framework\View\Element\Template" template="Magento_Catalog::product/view/ingredient-more-info.phtml" before="content.aside" />
+        </referenceContainer>
+        <referenceBlock class="Magento\Catalog\Block\Product\ProductList\Related" name="catalog.product.related" template="Magento_Catalog::product/list/items.phtml"></referenceBlock>
+        <referenceBlock name="related.product.addto" remove="true" />
+        <referenceBlock name="product.info.details">
+            <block class="Magento\Catalog\Block\Product\View\Attributes" name="how.to.tab" as="how.to.tab" template="Magento_Catalog::product/view/how-to.phtml" group="detailed_info">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">HOW TO</argument>
+                    <argument name="sort_order" xsi:type="string">20</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Catalog\Block\Product\View\Attributes" name="ingredient.tab" as="ingredient.tab" template="Magento_Catalog::product/view/dqa.phtml" group="detailed_info">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">INGREDIENT</argument>
+                    <argument name="sort_order" xsi:type="string">20</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

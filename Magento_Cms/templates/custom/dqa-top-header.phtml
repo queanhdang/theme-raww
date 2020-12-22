@@ -1,0 +1,18 @@
+<?php for ($i = 1; $i <= 2; $i++) { ?>
+    <div class="dqa-top-item">
+        <div class="dqa-top-mb-icon">
+            <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('top-header-icon-' . $i)->toHtml() ?>
+        </div>
+        <div class="dqa-top-mb-text">
+            <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('top-header-text-' . $i)->toHtml() ?>
+        </div>
+</div>
+<?php
+}
+?>
+<div class="dqa-top-item">
+    <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('dqa-top-header-desktop-left')->toHtml() ?>
+</div>
+<div class="dqa-top-item">
+    <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('dqa-top-header-desktop-middle')->toHtml() ?>
+</div>

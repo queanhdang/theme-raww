@@ -1,0 +1,16 @@
+<div class="dqa-usp-message">
+<div class="dqa-usp-message-content">
+<?php for ($i = 1; $i <= 6; $i++) { ?>
+    <a href="" class="dqa-usp-message-item">
+        <div class="dqa-dqa-usp-message-item-icon">
+            <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('dqa-usp-messages-' . $i)->toHtml() ?>
+        </div>
+        <div class="dqa-usp-message-item-text">
+            <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('dqa-usp-messages-text-' . $i)->toHtml() ?>
+        </div>
+    </a>
+<?php
+}
+?>
+</div>
+</div>

@@ -1,0 +1,7 @@
+<?php
+    $_additional = $block->getAdditionalData();
+?>
+<?php if (!empty($_additional['ingredient'])) {?>
+    <h3 class="title"><?= $_additional['ingredient']['label']?></h3>
+    <span class="content"><?= $_additional['ingredient']['value']?></span>
+<?php }?>

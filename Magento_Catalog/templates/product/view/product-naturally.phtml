@@ -1,0 +1,12 @@
+<div class="product-naturally">
+    <div class="product-naturally-title">
+        <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('product-naturally-title')->toHtml() ?>
+    </div>
+    <div class="product-naturally-content">
+        <?php for ($i = 1; $i <= 3; $i++) { ?>
+            <div class="product-naturally-item">
+                <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('product-naturally-item-' . $i)->toHtml() ?>
+            </div>
+        <?php } ?>
+    </div>
+</div>

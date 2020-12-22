@@ -1,0 +1,34 @@
+@dark-white: rgb(228, 226, 226);
+@primary-color: #e9d5d2;
+@text-color: #31251c;
+
+.mixin-flex(@align-item: unset, @justify-content: unset) {
+    display: flex;
+    align-items: @align-item;
+    justify-content: @justify-content;
+}
+
+.mixin-container(@width: 1240px, @padding: 0) {
+    max-width: @width;
+    margin: auto;
+    padding: @padding;
+}
+
+.mixin-style(@color: @color-white, @font-size: 14px, @font-family: inherit) {
+    color: @color;
+    font-size: @font-size;
+    font-family: @font-family;
+}
+
+.mixin-icon(@content, @font-family: "Line Awesome Free", @font-weight: 900) {
+    content: @content;
+    font-family: @font-family;
+    font-weight: @font-weight;
+}
+
+.mixin-style-title(@color: @color-white, @font-size: 100px, @font-family: 'marketfield', @letter-spacing: -2px, @line-height: 75%) {
+    .mixin-style(@color, @font-size, @font-family);
+    line-height: @line-height;
+    letter-spacing: @letter-spacing;
+}
+

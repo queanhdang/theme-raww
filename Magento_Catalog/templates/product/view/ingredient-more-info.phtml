@@ -1,0 +1,17 @@
+<div class="ingredient-info">
+    <div class="ingredient-info-content">
+        <div class="ingredient-info-title">
+            <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('ingredient-info-title')->toHtml() ?>
+        </div>
+        <div class="ingredient-info-des">
+            <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('ingredient-info-des')->toHtml() ?>
+        </div>
+        <ul class="ingredient-info-list">
+            <?php for ($i = 1; $i <= 8; $i++) { ?>
+                <li class="ingredient-info-item">
+                    <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('ingredient-icon-' . $i)->toHtml() ?>
+                </li>
+            <?php } ?>
+        </ul>
+    </div>
+</div>
